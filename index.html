@@ -1,1 +1,490 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>أبطال النمو | Growth Heroes</title>
+<style>
+:root{--bg:#f1f5f9;--card:#ffffff;--text:#1e293b;--head:#0f172a;--muted:#64748b;--line:#e2e8f0;--soft:#f8fafc;--input:#cbd5e1;--brand:#16a34a;--brand-d:#15803d;--brand-soft:#f0fdf4;--brand-line:#bbf7d0;--blue:#2563eb;--blue-soft:#eff6ff;--blue-line:#bfdbfe;--purple:#9333ea;--purple-soft:#fdf4ff;--purple-line:#f5d0fe;--danger:#dc2626;--danger-d:#b91c1c;--warn-soft:#fef9c3;--warn:#a16207;--shadow:rgba(0,0,0,.06)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0b1220;--card:#131c2e;--text:#e2e8f0;--head:#f8fafc;--muted:#94a3b8;--line:#243049;--soft:#18233a;--input:#34425e;--brand:#22c55e;--brand-d:#16a34a;--brand-soft:#0f2a1a;--brand-line:#1e5b36;--blue:#60a5fa;--blue-soft:#0f1f3a;--blue-line:#1e3a6b;--purple:#c084fc;--purple-soft:#2a1238;--purple-line:#5b2a78;--warn-soft:#3a3210;--warn:#fde047;--shadow:rgba(0,0,0,.4)}}
+:root[data-theme="dark"]{--bg:#0b1220;--card:#131c2e;--text:#e2e8f0;--head:#f8fafc;--muted:#94a3b8;--line:#243049;--soft:#18233a;--input:#34425e;--brand:#22c55e;--brand-d:#16a34a;--brand-soft:#0f2a1a;--brand-line:#1e5b36;--blue:#60a5fa;--blue-soft:#0f1f3a;--blue-line:#1e3a6b;--purple:#c084fc;--purple-soft:#2a1238;--purple-line:#5b2a78;--warn-soft:#3a3210;--warn:#fde047;--shadow:rgba(0,0,0,.4)}
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*,*::before,*::after{box-sizing:inherit}
+body{font-family:Tahoma,"Segoe UI",Arial,sans-serif;background:var(--bg);margin:0;color:var(--text);direction:rtl;line-height:1.5}
+.hide{display:none!important}
+header{background:var(--card);border-bottom:1px solid var(--line);padding:14px 20px;display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;box-shadow:0 1px 3px var(--shadow)}
+.logo{font-size:20px;font-weight:bold;color:var(--brand)}
+.nav-tabs{background:var(--card);padding:0 20px;border-bottom:1px solid var(--line);display:flex;gap:6px;overflow-x:auto;max-width:100%;scrollbar-width:thin}
+.nav-tabs button{background:none;border:none;padding:12px 14px;font-size:14px;font-weight:bold;cursor:pointer;color:var(--muted);border-bottom:2px solid transparent;white-space:nowrap;font-family:inherit}
+.nav-tabs button.active{color:var(--brand);border-bottom-color:var(--brand)}
+.container{max-width:1000px;margin:24px auto;padding:0 16px}
+.card{background:var(--card);padding:22px;border-radius:12px;box-shadow:0 2px 4px var(--shadow);margin-bottom:18px}
+h2{color:var(--head);margin:0 0 12px}
+h3{margin:0 0 6px;color:var(--head)}
+label{display:block;font-weight:bold;margin-bottom:6px;font-size:13px}
+input,textarea,select{width:100%;padding:10px;margin-bottom:14px;border:1px solid var(--input);border-radius:6px;font-size:14px;font-family:inherit;background:var(--card);color:var(--text)}
+input[type=radio]{width:auto;margin:0 0 0 8px}
+input[type=file]{padding:8px}
+.btn{background:var(--brand);color:#fff;border:none;padding:10px 18px;font-size:14px;font-weight:bold;border-radius:6px;cursor:pointer;font-family:inherit}
+.btn:hover{background:var(--brand-d)}
+.btn.danger{background:var(--danger)}.btn.danger:hover{background:var(--danger-d)}
+.btn.secondary{background:#64748b}.btn.secondary:hover{background:#475569}
+.btn.sm{padding:5px 10px;font-size:12px}
+.btn:disabled{opacity:.5;cursor:not-allowed}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.between{justify-content:space-between}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin-top:16px}
+.stat{padding:14px;border-radius:8px;text-align:center;border:1px solid}
+.stat b{display:block;font-size:22px}.stat small{font-size:12px;color:var(--muted)}
+.s-green{background:var(--brand-soft);border-color:var(--brand-line)}.s-green b{color:var(--brand)}
+.s-blue{background:var(--blue-soft);border-color:var(--blue-line)}.s-blue b{color:var(--blue)}
+.s-purple{background:var(--purple-soft);border-color:var(--purple-line)}.s-purple b{color:var(--purple)}
+.table-wrap{overflow-x:auto;max-width:100%}
+table{width:100%;border-collapse:collapse;margin-top:8px}
+th,td{padding:10px;text-align:right;border-bottom:1px solid var(--line);font-size:14px;white-space:nowrap}
+th{background:var(--soft);color:var(--muted)}
+tr.me td{background:var(--brand-soft);font-weight:bold}
+.login-screen{max-width:400px;margin:60px auto;background:var(--card);padding:34px;border-radius:16px;box-shadow:0 10px 25px var(--shadow);text-align:center}
+.login-screen label{text-align:right}
+.box{background:var(--soft);border:1px solid var(--line);padding:15px;border-radius:8px;margin-top:14px}
+.badge{background:var(--brand-soft);color:var(--brand);padding:4px 10px;border-radius:20px;font-size:12px;font-weight:bold;display:inline-block;border:1px solid var(--brand-line)}
+.badge.warn{background:var(--warn-soft);color:var(--warn);border-color:transparent}
+.badge.gray{background:var(--soft);color:var(--muted);border-color:var(--line)}
+.muted{color:var(--muted);font-size:13px}
+.err{color:var(--danger);font-size:13px;margin:-6px 0 10px;min-height:16px}
+.bar{background:var(--line);height:10px;border-radius:10px;overflow:hidden}
+.bar i{display:block;height:100%;background:var(--brand);border-radius:10px}
+.video{position:relative;padding-top:56.25%;margin:10px 0;border-radius:8px;overflow:hidden;background:#000}
+.video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.q{margin:12px 0;padding:12px;border:1px solid var(--line);border-radius:8px;background:var(--card)}
+.opt{display:flex;align-items:center;padding:6px 4px;cursor:pointer}
+.ok{color:var(--brand);font-weight:bold}.bad{color:var(--danger);font-weight:bold}
+.subtabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px}
+.subtabs button{border:1px solid var(--line);background:var(--soft);color:var(--text);padding:7px 12px;border-radius:20px;cursor:pointer;font-family:inherit;font-size:13px}
+.subtabs button.active{background:var(--brand);color:#fff;border-color:var(--brand)}
+.overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);display:flex;align-items:center;justify-content:center;z-index:50;padding:20px}
+.dialog{background:var(--card);padding:22px;border-radius:12px;max-width:380px;width:100%}
+#toast{position:fixed;bottom:calc(20px + env(safe-area-inset-bottom,0px));left:50%;transform:translateX(-50%);background:#0f172a;color:#fff;padding:10px 18px;border-radius:8px;font-size:14px;z-index:60;max-width:90%;text-align:center}
+#toast.e{background:var(--danger)}
+textarea.out{font-family:monospace;direction:ltr;text-align:left;min-height:140px}
+@media (max-width:600px){.container{margin:14px auto}.card{padding:16px}.login-screen{margin:30px 14px;padding:24px}}
+</style>
+</head>
+<body>
 
+<div id="loginScreen" class="login-screen">
+  <h2 id="loginTitle" style="color:var(--brand);margin-bottom:4px">أبطال النمو</h2>
+  <p class="muted" style="margin-bottom:22px">منصة التعلم التفاعلي والمهارات الحياتية</p>
+  <label for="roleSelect">اختر صفة الدخول:</label>
+  <select id="roleSelect">
+    <option value="participant">مشارك</option>
+    <option value="supervisor">مشرف تربوي</option>
+    <option value="admin">مسؤول النظام (Admin)</option>
+  </select>
+  <div id="usernameDiv">
+    <label for="userInput">اسم المشارك أو اليوزرنيم:</label>
+    <input type="text" id="userInput" placeholder="مثال: p001" autocomplete="off">
+  </div>
+  <label for="passInput">كلمة المرور:</label>
+  <input type="password" id="passInput" placeholder="••••••••" autocomplete="off">
+  <div class="err" id="loginErr"></div>
+  <button class="btn" style="width:100%" data-act="login">دخول للنظام</button>
+  <p class="muted" style="margin-top:14px">لو ده أول استخدام: الأدمن <b dir="ltr">admin123</b> · المشرف <b dir="ltr">super123</b> · المشارك <b dir="ltr">p001 / 1234</b></p>
+</div>
+
+<div id="app" class="hide">
+  <header>
+    <div class="logo" id="appLogo">🌱 أبطال النمو | Growth Heroes</div>
+    <div class="row">
+      <span id="whoami" style="font-weight:bold;font-size:14px"></span>
+      <button class="btn secondary sm" data-act="theme">🌓</button>
+      <button class="btn danger sm" data-act="logout">خروج</button>
+    </div>
+  </header>
+  <nav class="nav-tabs" id="nav"></nav>
+  <main class="container" id="main"></main>
+</div>
+<div id="toast" class="hide"></div>
+
+<script>
+(function(){
+'use strict';
+var KEY='growthHeroes.v1', SKEY='growthHeroes.session', TKEY='growthHeroes.theme';
+var TITLES=[{min:0,name:'🌱 بذرة'},{min:50,name:'🌿 برعم'},{min:150,name:'🪴 نبتة'},{min:300,name:'🌳 شجرة'},{min:500,name:'🏆 بطل النمو'}];
+var S, session=null, tab='dashboard', adminTab='points', openCh=null, showVideoForm=false, outText=null;
+
+/* ---------- helpers ---------- */
+function $(s){return document.querySelector(s)}
+function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[c]})}
+function gid(p){return p+Date.now().toString(36)+Math.random().toString(36).slice(2,6)}
+function pad(n){return String(n).padStart(3,'0')}
+function titleOf(p){var t=TITLES[0];TITLES.forEach(function(x){if(p>=x.min)t=x});return t}
+function nextTitle(p){return TITLES.find(function(x){return x.min>p})}
+function fmtDate(ts){try{return new Date(ts).toLocaleString('ar-EG',{dateStyle:'short',timeStyle:'short'})}catch(e){return ''}}
+function toast(m,e){var t=$('#toast');t.textContent=m;t.className=e?'e':'';clearTimeout(toast.h);toast.h=setTimeout(function(){t.className='hide'},2800)}
+function ask(msg){return new Promise(function(res){var o=document.createElement('div');o.className='overlay';o.innerHTML='<div class="dialog"><p>'+esc(msg)+'</p><div class="row"><button class="btn danger" data-y>تأكيد</button><button class="btn secondary" data-n>إلغاء</button></div></div>';o.addEventListener('click',function(e){if(e.target.closest('[data-y]')){o.remove();res(true)}else if(e.target.closest('[data-n]')||e.target===o){o.remove();res(false)}});document.body.appendChild(o)})}
+function lsGet(k){try{return localStorage.getItem(k)}catch(e){return null}}
+function lsSet(k,v){try{localStorage.setItem(k,v)}catch(e){}}
+function lsDel(k){try{localStorage.removeItem(k)}catch(e){}}
+
+/* ---------- data ---------- */
+function parseQs(text){
+  return String(text||'').split('\n').map(function(l){return l.trim()}).filter(Boolean).map(function(l){
+    var p=l.split('|').map(function(x){return x.trim()}),ci=-1;
+    for(var i=1;i<p.length;i++){if(/^#\d+$/.test(p[i])){ci=i;break}}
+    if(ci<3)return null;
+    return{q:p[0],opts:p.slice(1,ci),correct:parseInt(p[ci].slice(1),10)-1,exp:p.slice(ci+1).join(' ')};
+  }).filter(function(q){return q&&q.correct>=0&&q.correct<q.opts.length});
+}
+function seed(){
+  var teams=['الفريق الأخضر','الفريق الأزرق','الفريق الذهبي','الفريق البنفسجي'],users=[];
+  for(var i=1;i<=176;i++)users.push({id:'p'+pad(i),name:'مشارك '+i,team:teams[(i-1)%4],pass:'1234',active:true});
+  return{
+    v:1,settings:{appName:'أبطال النمو',adminPass:'admin123',supPass:'super123',teams:teams,videoPoints:5},
+    users:users,tx:[],attempts:[],watched:[],
+    videos:[{id:'v1',title:'مرحباً بك في رحلة النمو',desc:'درس تمهيدي عن أهداف البرنامج وكيف تجمع النقاط وتتطور من بذرة إلى بطل نمو.',url:'',ts:Date.now()}],
+    challenges:[
+      {id:'c1',type:'quiz',title:'اختبار مفهوم الحزن الطبيعي',desc:'أجب عن الأسئلة لاختبار فهمك لمفاهيم الصحة النفسية.',points:15,active:true,qs:parseQs(
+'هل الحزن بعد فقدان شيء مهم شعور طبيعي؟ | نعم، شعور طبيعي ويحتاج وقتاً | لا، يجب تجاهله فوراً | هذا ضعف في الشخصية | #1 | الحزن شعور إنساني طبيعي، والتعبير عنه يساعد على التعافي.\n'+
+'أيهما أفضل عند الشعور بالحزن؟ | الانعزال التام لأسابيع | التحدث مع شخص تثق به | إنكار المشاعر | #2 | الحديث مع شخص موثوق يخفف الحمل.\n'+
+'متى نطلب مساعدة مختص؟ | عندما يستمر الحزن طويلاً ويؤثر على حياتنا اليومية | أبداً | عندما يقول لنا أحد إننا ضعفاء | #1 | طلب المساعدة قوة وليس ضعفاً.')},
+      {id:'c2',type:'scenario',title:'موقف: صديقك حزين',desc:'اختر التصرف الأنسب في الموقف.',points:10,active:true,qs:parseQs(
+'صديقك حزين لأنه خسر مباراة مهمة. ماذا تفعل؟ | أضحك عليه | أسمعه وأقول له إني معه | أتجاهله | #2 | الاستماع والدعم يجعله يشعر بأنه ليس وحده.')},
+      {id:'c3',type:'task',title:'مهمة عملية: الامتنان',desc:'اكتب ثلاثة أشياء تشعر بالامتنان لها اليوم. يراجعها المشرف ثم تحصل على نقاطك.',points:20,active:true,qs:[]}
+    ]
+  };
+}
+function load(){var r=lsGet(KEY);if(r){try{var d=JSON.parse(r);if(d&&d.users&&d.settings)return d}catch(e){}}return seed()}
+function save(){lsSet(KEY,JSON.stringify(S))}
+
+function totals(){var m={};S.tx.forEach(function(t){m[t.uid]=(m[t.uid]||0)+t.delta});return m}
+function ranking(){
+  var m=totals();
+  var a=S.users.filter(function(u){return u.active!==false}).map(function(u){return{u:u,p:m[u.id]||0}});
+  a.sort(function(x,y){return y.p-x.p||x.u.name.localeCompare(y.u.name,'ar')});
+  var r=0,prev=null;a.forEach(function(x,i){if(x.p!==prev){r=i+1;prev=x.p}x.rank=r});
+  return a;
+}
+function addTx(uid,delta,reason,ref,type){
+  if(ref&&S.tx.some(function(t){return t.uid===uid&&t.ref===ref}))return false;
+  S.tx.push({id:gid('t'),ts:Date.now(),uid:uid,delta:delta,reason:reason,ref:ref||'',type:type||'manual',by:session?session.label:'نظام'});
+  save();return true;
+}
+function userById(id){return S.users.find(function(u){return u.id===id})}
+function myAttempt(uid,cid){var a=S.attempts.filter(function(x){return x.uid===uid&&x.cid===cid});return a[a.length-1]}
+function ytId(u){var m=String(u||'').match(/(?:youtu\.be\/|v=|embed\/|shorts\/)([\w-]{11})/);return m?m[1]:null}
+function isStaff(){return session&&session.role!=='participant'}
+function isAdmin(){return session&&session.role==='admin'}
+
+/* ---------- CSV ---------- */
+function parseCSV(t){
+  var rows=[],r=[],c='',q=false;t=String(t).replace(/^\uFEFF/,'');
+  for(var i=0;i<t.length;i++){var ch=t[i];
+    if(q){if(ch==='"'){if(t[i+1]==='"'){c+='"';i++}else q=false}else c+=ch}
+    else if(ch==='"')q=true;
+    else if(ch===','||ch==='\t'||ch===';'){r.push(c);c=''}
+    else if(ch==='\n'||ch==='\r'){if(ch==='\r'&&t[i+1]==='\n')i++;r.push(c);c='';if(r.some(function(x){return x.trim()}))rows.push(r);r=[]}
+    else c+=ch}
+  r.push(c);if(r.some(function(x){return x.trim()}))rows.push(r);
+  return rows.map(function(r){return r.map(function(x){return x.trim()})});
+}
+function cell(v){if(typeof v==='number')return String(v);v=String(v==null?'':v);if(/^[=+\-@]/.test(v))v="'"+v;return'"'+v.replace(/"/g,'""')+'"'}
+function toCSV(rows){return '\uFEFF'+rows.map(function(r){return r.map(cell).join(',')}).join('\n')}
+
+/* ---------- session / login ---------- */
+function login(){
+  var role=$('#roleSelect').value,pw=$('#passInput').value,err=$('#loginErr');err.textContent='';
+  if(role==='admin'){if(pw!==S.settings.adminPass){err.textContent='كلمة المرور غير صحيحة';return}session={role:'admin',label:'مسؤول النظام'}}
+  else if(role==='supervisor'){if(pw!==S.settings.supPass){err.textContent='كلمة المرور غير صحيحة';return}session={role:'supervisor',label:'مشرف تربوي'}}
+  else{
+    var n=$('#userInput').value.trim().toLowerCase();
+    var u=S.users.find(function(x){return x.id.toLowerCase()===n||x.name.trim().toLowerCase()===n});
+    if(!u||u.active===false||u.pass!==pw){err.textContent='الاسم أو كلمة المرور غير صحيحة';return}
+    session={role:'participant',uid:u.id,label:u.name};
+  }
+  lsSet(SKEY,JSON.stringify(session));
+  $('#passInput').value='';tab='dashboard';openCh=null;render();
+}
+function logout(){session=null;lsDel(SKEY);render()}
+function toggleRole(){$('#usernameDiv').classList.toggle('hide',$('#roleSelect').value!=='participant')}
+
+/* ---------- views ---------- */
+function render(){
+  var name=S.settings.appName||'أبطال النمو';
+  document.title=name+' | Growth Heroes';$('#loginTitle').textContent=name;
+  if(!session){$('#loginScreen').classList.remove('hide');$('#app').classList.add('hide');return}
+  $('#loginScreen').classList.add('hide');$('#app').classList.remove('hide');
+  $('#appLogo').textContent='🌱 '+name+' | Growth Heroes';
+  $('#whoami').textContent=(session.role==='participant'?'👤 ':session.role==='admin'?'🛡️ ':'🧑‍🏫 ')+session.label;
+  var tabs=[['dashboard','الرئيسية'],['content','المحتوى والفيديوهات'],['challenges','التحديات والكويزات'],['leaderboard','لوحة الصدارة']];
+  if(isStaff())tabs.push(['admin',isAdmin()?'لوحة تحكم المسؤول':'لوحة المشرف']);
+  if(!tabs.some(function(t){return t[0]===tab}))tab='dashboard';
+  $('#nav').innerHTML=tabs.map(function(t){return'<button class="'+(t[0]===tab?'active':'')+'" data-act="tab" data-tab="'+t[0]+'">'+t[1]+'</button>'}).join('');
+  var v={dashboard:vDash,content:vContent,challenges:vChallenges,leaderboard:vBoard,admin:vAdmin}[tab];
+  $('#main').innerHTML=v();
+  if(tab==='leaderboard')lbRows();
+  if(tab==='admin'&&adminTab==='users')uRows();
+}
+
+function vDash(){
+  var m=totals(),rk=ranking(),h='<div class="card"><h2>أهلاً بك'+(session.role==='participant'?' يا '+esc(session.label):'')+' في منصة '+esc(S.settings.appName)+'!</h2>';
+  if(session.role==='participant'){
+    var p=m[session.uid]||0,me=rk.find(function(x){return x.u.id===session.uid}),t=titleOf(p),nt=nextTitle(p);
+    var done=S.attempts.filter(function(a){return a.uid===session.uid&&(a.status==='done'||a.status==='approved')}).length;
+    h+='<div class="grid"><div class="stat s-purple"><b>'+p+'</b><small>نقاطي الحالية</small></div>'+
+       '<div class="stat s-green"><b>'+(me?'#'+me.rank:'-')+'</b><small>ترتيبي من '+rk.length+'</small></div>'+
+       '<div class="stat s-blue"><b>'+done+'</b><small>تحديات مكتملة</small></div>'+
+       '<div class="stat s-green"><b style="font-size:16px">'+esc(t.name)+'</b><small>لقبي</small></div></div>';
+    if(nt){var pct=Math.max(0,Math.min(100,Math.round((p-t.min)/(nt.min-t.min)*100)));
+      h+='<div class="box"><div class="row between"><span class="muted">باقي '+(nt.min-p)+' نقطة للقب '+esc(nt.name)+'</span><b>'+pct+'%</b></div><div class="bar" style="margin-top:8px"><i style="width:'+pct+'%"></i></div></div>'}
+    var mine=S.tx.filter(function(x){return x.uid===session.uid}).slice(-5).reverse();
+    if(mine.length)h+='<h3 style="margin-top:18px">آخر نقاطي</h3>'+mine.map(function(x){return'<div class="row between" style="padding:6px 0;border-bottom:1px solid var(--line)"><span>'+esc(x.reason)+'</span><b class="'+(x.delta>=0?'ok':'bad')+'" dir="ltr">'+(x.delta>0?'+':'')+x.delta+'</b></div>'}).join('');
+  }else{
+    var pend=S.attempts.filter(function(a){return a.status==='pending'}).length,sum=0;Object.keys(m).forEach(function(k){sum+=m[k]});
+    h+='<p class="muted">ملخص الأداء ومتابعة '+S.users.filter(function(u){return u.active!==false}).length+' مشارك بكل سهولة.</p>'+
+       '<div class="grid"><div class="stat s-green"><b>'+S.videos.length+'</b><small>الدروس المنشورة</small></div>'+
+       '<div class="stat s-blue"><b>'+S.users.filter(function(u){return u.active!==false}).length+'</b><small>إجمالي المشاركين</small></div>'+
+       '<div class="stat s-purple"><b>'+sum+'</b><small>إجمالي النقاط</small></div>'+
+       '<div class="stat s-green"><b>'+pend+'</b><small>مهام بانتظار المراجعة</small></div></div>';
+    var tm={};S.settings.teams.forEach(function(t){tm[t]=0});S.users.forEach(function(u){if(u.active!==false)tm[u.team]=(tm[u.team]||0)+(m[u.id]||0)});
+    var mx=Math.max.apply(null,Object.keys(tm).map(function(k){return tm[k]}).concat([1]));
+    h+='<h3 style="margin-top:18px">نقاط الفرق</h3>'+Object.keys(tm).map(function(k){return'<div style="margin:8px 0"><div class="row between"><span>'+esc(k)+'</span><b>'+tm[k]+'</b></div><div class="bar"><i style="width:'+Math.round(tm[k]/mx*100)+'%"></i></div></div>'}).join('');
+  }
+  return h+'</div>';
+}
+
+function vContent(){
+  var h='<div class="card"><div class="row between"><h2>المحتوى التعليمي اليومي والفيديوهات</h2>'+(isStaff()?'<button class="btn" data-act="toggleVideoForm">+ إضافة يوم تعليمي وفيديو جديد</button>':'')+'</div>';
+  if(isStaff()&&showVideoForm)h+='<div class="box"><h3 style="color:var(--brand)">إضافة درس جديد</h3><label>عنوان الدرس:</label><input id="nvTitle" placeholder="مثال: مهارات التواصل الفعّال"><label>وصف مختصر:</label><textarea id="nvDesc" rows="2" placeholder="نبذة عن الدرس..."></textarea><label>رابط الفيديو (يوتيوب) — اختياري:</label><input id="nvUrl" dir="ltr" placeholder="https://www.youtube.com/watch?v=..."><div class="row"><button class="btn" data-act="saveVideo">حفظ ونشر</button><button class="btn secondary" data-act="toggleVideoForm">إلغاء</button></div></div>';
+  if(!S.videos.length)h+='<p class="muted">لا توجد دروس بعد.</p>';
+  S.videos.slice().reverse().forEach(function(v){
+    var id=ytId(v.url),w=session.role==='participant'&&S.watched.some(function(x){return x.uid===session.uid&&x.vid===v.id});
+    h+='<div class="box"><h3>'+esc(v.title)+'</h3><p class="muted">'+esc(v.desc)+'</p>';
+    if(id)h+='<div class="video"><iframe src="https://www.youtube-nocookie.com/embed/'+id+'" title="'+esc(v.title)+'" allowfullscreen loading="lazy"></iframe></div><a href="'+esc(v.url)+'" target="_blank" rel="noopener" class="muted">فتح على يوتيوب ↗</a>';
+    h+='<div class="row" style="margin-top:10px">';
+    if(session.role==='participant')h+=w?'<span class="badge">✅ تمت المشاهدة</span>':'<button class="btn sm" data-act="watch" data-id="'+v.id+'">تمت المشاهدة (+'+S.settings.videoPoints+' نقاط)</button>';
+    if(isAdmin())h+='<button class="btn danger sm" data-act="delVideo" data-id="'+v.id+'">حذف</button>';
+    h+='</div></div>';
+  });
+  return h+'</div>';
+}
+
+function vChallenges(){
+  var h='<div class="card"><h2>التحديات والكويزات المتاحة</h2>';
+  if(isStaff())h+='<p class="muted">وضع المعاينة: المشاركون فقط يستطيعون حل التحديات.</p>';
+  var list=S.challenges.filter(function(c){return c.active!==false});
+  if(!list.length)h+='<p class="muted">لا توجد تحديات حالياً.</p>';
+  list.forEach(function(c){
+    var tl={quiz:'كويز',scenario:'موقف عاطفي',task:'مهمة عملية'}[c.type],a=session.role==='participant'?myAttempt(session.uid,c.id):null;
+    h+='<div class="box"><span class="badge">'+tl+' (+'+c.points+' نقطة)</span> ';
+    if(a)h+=a.status==='pending'?'<span class="badge warn">بانتظار المراجعة</span>':a.status==='rejected'?'<span class="badge warn">تحتاج إعادة</span>':'<span class="badge">✅ مكتمل</span>';
+    h+='<h3 style="margin-top:8px">'+esc(c.title)+'</h3><p class="muted">'+esc(c.desc)+'</p>';
+    if(session.role==='participant'){
+      var canDo=!a||a.status==='rejected';
+      if(openCh===c.id&&canDo)h+=chForm(c);
+      else if(a&&c.type!=='task'&&openCh===c.id)h+=chResult(c,a);
+      else if(a&&c.type==='task'&&a.status!=='rejected')h+='<div class="muted">إجابتك: '+esc(a.text)+'</div>';
+      if(openCh!==c.id){
+        if(canDo)h+='<button class="btn" data-act="openCh" data-id="'+c.id+'">'+(a?'أعد المحاولة':'ابدأ التحدي الآن')+'</button>';
+        else if(c.type!=='task')h+='<button class="btn secondary sm" data-act="openCh" data-id="'+c.id+'">عرض نتيجتي</button>';
+      }
+    }
+    h+='</div>';
+  });
+  return h+'</div>';
+}
+function chForm(c){
+  var h='<div>';
+  if(c.type==='task')h+='<textarea id="taskText" rows="4" placeholder="اكتب إجابتك هنا..."></textarea>';
+  else c.qs.forEach(function(q,i){h+='<div class="q"><b>'+(i+1)+'. '+esc(q.q)+'</b>'+q.opts.map(function(o,j){return'<label class="opt"><input type="radio" name="q'+i+'" value="'+j+'">'+esc(o)+'</label>'}).join('')+'</div>'});
+  return h+'<div class="row"><button class="btn" data-act="submitCh" data-id="'+c.id+'">إرسال</button><button class="btn secondary" data-act="closeCh">إلغاء</button></div></div>';
+}
+function chResult(c,a){
+  var h='<div>';
+  c.qs.forEach(function(q,i){var ok=a.answers[i]===q.correct;
+    h+='<div class="q"><b>'+(i+1)+'. '+esc(q.q)+'</b><div class="'+(ok?'ok':'bad')+'">'+(ok?'✅ إجابة صحيحة':'❌ إجابتك: '+esc(q.opts[a.answers[i]]||'-')+' — الصحيحة: '+esc(q.opts[q.correct]))+'</div>'+(q.exp?'<div class="muted">'+esc(q.exp)+'</div>':'')+'</div>'});
+  return h+'<p><b>نتيجتك: '+a.correct+' / '+c.qs.length+' (+'+a.score+' نقطة)</b></p><button class="btn secondary sm" data-act="closeCh">إغلاق</button></div>';
+}
+
+function vBoard(){
+  var h='<div class="card"><h2>لوحة الصدارة والتميز</h2><div class="row"><div style="flex:1;min-width:160px"><input id="lbSearch" placeholder="🔍 ابحث بالاسم..."></div><div style="flex:1;min-width:160px"><select id="lbTeam"><option value="">كل الفرق</option>'+S.settings.teams.map(function(t){return'<option>'+esc(t)+'</option>'}).join('')+'</select></div></div>'+
+  '<div class="table-wrap"><table><thead><tr><th>المركز</th><th>اسم المشارك</th><th>الفريق</th><th>اللقب التشجيعي</th><th>النقاط</th></tr></thead><tbody id="lbBody"></tbody></table></div></div>';
+  return h;
+}
+function lbRows(){
+  var q=($('#lbSearch')||{value:''}).value.trim().toLowerCase(),tm=($('#lbTeam')||{value:''}).value,rk=ranking();
+  var f=rk.filter(function(x){return(!tm||x.u.team===tm)&&(!q||x.u.name.toLowerCase().indexOf(q)>-1)}).slice(0,100);
+  var medal={1:'🥇',2:'🥈',3:'🥉'};
+  $('#lbBody').innerHTML=f.map(function(x){var me=session.role==='participant'&&x.u.id===session.uid;
+    return'<tr class="'+(me?'me':'')+'"><td>'+(medal[x.rank]||x.rank)+'</td><td>'+esc(x.u.name)+(me?' (أنت)':'')+'</td><td>'+esc(x.u.team)+'</td><td>'+esc(titleOf(x.p).name)+'</td><td>'+x.p+'</td></tr>'}).join('')||'<tr><td colspan="5" class="muted">لا نتائج</td></tr>';
+}
+
+function vAdmin(){
+  var tabs=[['points','منح/خصم نقاط'],['review','مراجعة المهام'],['users','المشاركون']];
+  if(isAdmin())tabs.push(['challenges','التحديات'],['log','سجل العمليات'],['settings','الإعدادات والبيانات']);
+  if(!tabs.some(function(t){return t[0]===adminTab}))adminTab='points';
+  var h='<div class="card"><h2>'+(isAdmin()?'لوحة تحكم المسؤول (Administrator Dashboard)':'لوحة المشرف')+'</h2><div class="subtabs">'+tabs.map(function(t){return'<button class="'+(t[0]===adminTab?'active':'')+'" data-act="aTab" data-tab="'+t[0]+'">'+t[1]+'</button>'}).join('')+'</div>';
+  h+=({points:aPoints,review:aReview,users:aUsers,challenges:aChallenges,log:aLog,settings:aSettings})[adminTab]();
+  if(outText!==null)h+='<div class="box"><b>جاهز للنسخ:</b><textarea class="out" id="outBox" readonly>'+esc(outText)+'</textarea><div class="row"><button class="btn sm" data-act="copyOut">📋 نسخ</button><button class="btn secondary sm" data-act="clearOut">إغلاق</button></div><p class="muted">الصق النص في ملف Excel أو Notepad واحفظه بامتداد .csv</p></div>';
+  return h+'</div>';
+}
+function aPoints(){
+  return'<label>المشارك:</label><input id="pUser" list="uList" placeholder="اكتب الاسم أو الكود (مثال: p001)"><datalist id="uList">'+S.users.map(function(u){return'<option value="'+esc(u.id+' — '+u.name)+'">'}).join('')+'</datalist>'+
+  '<div class="row"><div style="flex:1;min-width:120px"><label>النقاط (سالب للخصم):</label><input id="pDelta" type="number" value="5"></div><div style="flex:3;min-width:200px"><label>السبب:</label><input id="pReason" placeholder="مثال: مشاركة مميزة في الحلقة"></div></div><button class="btn" data-act="award">تنفيذ</button>'+
+  '<h3 style="margin-top:20px">منح نقاط لفريق كامل</h3><div class="row"><div style="flex:2;min-width:160px"><select id="tTeam">'+S.settings.teams.map(function(t){return'<option>'+esc(t)+'</option>'}).join('')+'</select></div><div style="flex:1;min-width:100px"><input id="tDelta" type="number" value="5"></div><div style="flex:3;min-width:160px"><input id="tReason" placeholder="السبب"></div></div><button class="btn" data-act="awardTeam">منح للفريق</button>';
+}
+function aReview(){
+  var p=S.attempts.filter(function(a){return a.status==='pending'});
+  if(!p.length)return'<p class="muted">لا توجد مهام بانتظار المراجعة 🎉</p>';
+  return p.map(function(a){var c=S.challenges.find(function(x){return x.id===a.cid}),u=userById(a.uid);
+    return'<div class="box"><b>'+esc(u?u.name:a.uid)+'</b> — '+esc(c?c.title:'')+' <span class="badge">+'+(c?c.points:0)+'</span><p>'+esc(a.text)+'</p><div class="row"><button class="btn sm" data-act="approve" data-id="'+a.id+'">قبول</button><button class="btn danger sm" data-act="reject" data-id="'+a.id+'">رفض (إعادة)</button></div></div>'}).join('');
+}
+function aUsers(){
+  var h='<div class="box"><h3>إضافة مشارك</h3><div class="row"><div style="flex:2;min-width:160px"><input id="nuName" placeholder="الاسم"></div><div style="flex:2;min-width:140px"><select id="nuTeam">'+S.settings.teams.map(function(t){return'<option>'+esc(t)+'</option>'}).join('')+'</select></div><div style="flex:1;min-width:100px"><input id="nuPass" value="1234" dir="ltr"></div></div><button class="btn" data-act="addUser">إضافة</button></div>'+
+  '<div class="box"><h3>استيراد CSV</h3><p class="muted">الأعمدة: الاسم, الفريق, اليوزرنيم (اختياري), كلمة المرور (اختياري)</p><input type="file" id="csvFile" accept=".csv,.txt"><textarea id="csvText" rows="4" dir="ltr" placeholder="name,team,username,password&#10;أحمد علي,الفريق الأخضر,,1234"></textarea><button class="btn" data-act="importCsv">استيراد</button></div>'+
+  '<div class="row" style="margin-top:14px"><button class="btn secondary sm" data-act="exportUsers">تصدير المشاركين CSV</button></div>'+
+  '<input id="uSearch" placeholder="🔍 ابحث عن مشارك..." style="margin-top:14px"><div class="table-wrap"><table><thead><tr><th>الكود</th><th>الاسم</th><th>الفريق</th><th>كلمة المرور</th><th>النقاط</th><th></th></tr></thead><tbody id="uBody"></tbody></table></div>';
+  return h;
+}
+function uRows(){
+  var q=($('#uSearch')||{value:''}).value.trim().toLowerCase(),m=totals();
+  var f=S.users.filter(function(u){return!q||u.name.toLowerCase().indexOf(q)>-1||u.id.toLowerCase().indexOf(q)>-1}).slice(0,150);
+  $('#uBody').innerHTML=f.map(function(u){return'<tr style="'+(u.active===false?'opacity:.5':'')+'"><td dir="ltr">'+esc(u.id)+'</td><td>'+esc(u.name)+'</td><td><select data-chg="setTeam" data-id="'+esc(u.id)+'" style="margin:0;padding:4px">'+S.settings.teams.map(function(t){return'<option'+(t===u.team?' selected':'')+'>'+esc(t)+'</option>'}).join('')+'</select></td><td dir="ltr">'+(isAdmin()?esc(u.pass):'••••')+'</td><td>'+(m[u.id]||0)+'</td><td><button class="btn secondary sm" data-act="toggleUser" data-id="'+esc(u.id)+'">'+(u.active===false?'تفعيل':'إيقاف')+'</button> '+(isAdmin()?'<button class="btn danger sm" data-act="delUser" data-id="'+esc(u.id)+'">حذف</button>':'')+'</td></tr>'}).join('')||'<tr><td colspan="6" class="muted">لا نتائج</td></tr>';
+}
+function aChallenges(){
+  var h='<div class="box"><h3>إضافة تحدي</h3><label>النوع:</label><select id="ncType"><option value="quiz">كويز</option><option value="scenario">موقف عاطفي</option><option value="task">مهمة عملية (بمراجعة المشرف)</option></select><label>العنوان:</label><input id="ncTitle"><label>الوصف:</label><textarea id="ncDesc" rows="2"></textarea><label>النقاط:</label><input id="ncPoints" type="number" value="10">'+
+  '<label>الأسئلة (للكويز والمواقف فقط) — سطر لكل سؤال:</label><textarea id="ncQs" rows="4" placeholder="السؤال | خيار 1 | خيار 2 | خيار 3 | #2 | تفسير اختياري"></textarea><p class="muted">علامة <b dir="ltr">#2</b> تعني أن الإجابة الصحيحة هي الخيار الثاني.</p><button class="btn" data-act="addChallenge">إضافة</button></div>';
+  h+=S.challenges.map(function(c){return'<div class="row between" style="padding:8px 0;border-bottom:1px solid var(--line)"><span>'+esc(c.title)+' <span class="badge gray">'+c.type+' · '+c.points+'</span></span><button class="btn danger sm" data-act="delChallenge" data-id="'+c.id+'">حذف</button></div>'}).join('');
+  return h;
+}
+function aLog(){
+  var rows=S.tx.slice(-100).reverse();
+  return'<div class="row"><button class="btn secondary sm" data-act="exportTx">تصدير السجل CSV</button><button class="btn secondary sm" data-act="exportBoard">تصدير لوحة الصدارة CSV</button></div><div class="table-wrap"><table><thead><tr><th>الوقت</th><th>المشارك</th><th>النقاط</th><th>السبب</th><th>بواسطة</th></tr></thead><tbody>'+
+  (rows.map(function(t){var u=userById(t.uid);return'<tr><td>'+fmtDate(t.ts)+'</td><td>'+esc(u?u.name:t.uid)+'</td><td dir="ltr" class="'+(t.delta>=0?'ok':'bad')+'">'+(t.delta>0?'+':'')+t.delta+'</td><td>'+esc(t.reason)+'</td><td>'+esc(t.by)+'</td></tr>'}).join('')||'<tr><td colspan="5" class="muted">لا عمليات بعد</td></tr>')+'</tbody></table></div><p class="muted">يعرض آخر 100 عملية. كل نقطة مسجلة كعملية قابلة للمراجعة.</p>';
+}
+function aSettings(){
+  var s=S.settings;
+  return'<div class="box" style="background:var(--warn-soft)"><b>تنبيه:</b> البيانات محفوظة في متصفح هذا الجهاز فقط. استخدم النسخ الاحتياطي لنقلها لجهاز آخر.</div>'+
+  '<label>اسم المنصة:</label><input id="sName" value="'+esc(s.appName)+'"><div class="row"><div style="flex:1;min-width:150px"><label>باسورد الأدمن:</label><input id="sAdmin" value="'+esc(s.adminPass)+'" dir="ltr"></div><div style="flex:1;min-width:150px"><label>باسورد المشرف:</label><input id="sSup" value="'+esc(s.supPass)+'" dir="ltr"></div><div style="flex:1;min-width:120px"><label>نقاط مشاهدة الفيديو:</label><input id="sVid" type="number" value="'+s.videoPoints+'"></div></div>'+
+  '<label>الفرق (فريق في كل سطر):</label><textarea id="sTeams" rows="4">'+esc(s.teams.join('\n'))+'</textarea><button class="btn" data-act="saveSettings">حفظ الإعدادات</button>'+
+  '<h3 style="margin-top:22px">نسخ احتياطي</h3><div class="row"><button class="btn secondary sm" data-act="exportBackup">تصدير نسخة JSON</button></div><textarea id="bkText" rows="3" dir="ltr" placeholder="الصق نسخة JSON هنا للاستعادة"></textarea><button class="btn secondary sm" data-act="importBackup">استعادة من النسخة</button>'+
+  '<h3 style="margin-top:22px;color:var(--danger)">منطقة الخطر</h3><button class="btn danger" data-act="resetAll">مسح كل البيانات وإعادة الضبط</button>';
+}
+
+/* ---------- actions ---------- */
+var A={
+  login:login,logout:logout,
+  theme:function(){var r=document.documentElement,cur=r.getAttribute('data-theme');var dark=cur?cur==='dark':matchMedia('(prefers-color-scheme: dark)').matches;var n=dark?'light':'dark';r.setAttribute('data-theme',n);lsSet(TKEY,n)},
+  tab:function(d){tab=d.tab;openCh=null;outText=null;render()},
+  aTab:function(d){adminTab=d.tab;outText=null;render()},
+  toggleVideoForm:function(){showVideoForm=!showVideoForm;render()},
+  saveVideo:function(){
+    var t=$('#nvTitle').value.trim(),u=$('#nvUrl').value.trim();
+    if(!t){toast('اكتب عنوان الدرس',1);return}
+    if(u&&!ytId(u)){toast('رابط يوتيوب غير صحيح',1);return}
+    S.videos.push({id:gid('v'),title:t,desc:$('#nvDesc').value.trim(),url:u,ts:Date.now()});save();showVideoForm=false;toast('تم نشر الدرس ✅');render();
+  },
+  delVideo:function(d){ask('حذف هذا الدرس؟').then(function(y){if(y){S.videos=S.videos.filter(function(v){return v.id!==d.id});save();render()}})},
+  watch:function(d){
+    if(S.watched.some(function(x){return x.uid===session.uid&&x.vid===d.id}))return;
+    S.watched.push({uid:session.uid,vid:d.id});
+    var v=S.videos.find(function(x){return x.id===d.id});
+    addTx(session.uid,S.settings.videoPoints,'مشاهدة درس: '+(v?v.title:''),'video:'+d.id,'video');save();toast('+'+S.settings.videoPoints+' نقاط 🎉');render();
+  },
+  openCh:function(d){openCh=d.id;render()},
+  closeCh:function(){openCh=null;render()},
+  submitCh:function(d){
+    var c=S.challenges.find(function(x){return x.id===d.id});if(!c)return;
+    var prev=myAttempt(session.uid,c.id);if(prev&&prev.status!=='rejected')return;
+    if(c.type==='task'){
+      var tx=$('#taskText').value.trim();if(tx.length<3){toast('اكتب إجابتك أولاً',1);return}
+      S.attempts.push({id:gid('a'),uid:session.uid,cid:c.id,text:tx,status:'pending',ts:Date.now()});save();toast('تم الإرسال للمراجعة ✅');openCh=null;render();return;
+    }
+    var ans=[],ok=0;
+    for(var i=0;i<c.qs.length;i++){var r=document.querySelector('input[name="q'+i+'"]:checked');if(!r){toast('أجب عن كل الأسئلة',1);return}ans.push(parseInt(r.value,10));if(ans[i]===c.qs[i].correct)ok++}
+    var sc=Math.round(c.points*ok/c.qs.length);
+    S.attempts.push({id:gid('a'),uid:session.uid,cid:c.id,answers:ans,correct:ok,score:sc,status:'done',ts:Date.now()});
+    if(sc>0)addTx(session.uid,sc,'تحدي: '+c.title,'ch:'+c.id,'challenge');save();toast('نتيجتك: '+ok+'/'+c.qs.length+' (+'+sc+' نقطة)');render();
+  },
+  award:function(){
+    var raw=$('#pUser').value.trim(),id=raw.split(' — ')[0].trim().toLowerCase();
+    var u=S.users.find(function(x){return x.id.toLowerCase()===id||x.name===raw});
+    var d=parseInt($('#pDelta').value,10),r=$('#pReason').value.trim();
+    if(!u){toast('اختر مشاركاً صحيحاً',1);return}
+    if(!d){toast('اكتب عدد النقاط',1);return}
+    if(!r){toast('اكتب السبب',1);return}
+    addTx(u.id,d,r,'','manual');toast('تم تسجيل '+d+' نقطة لـ '+u.name);$('#pReason').value='';
+  },
+  awardTeam:function(){
+    var team=$('#tTeam').value,d=parseInt($('#tDelta').value,10),r=$('#tReason').value.trim();
+    if(!d||!r){toast('اكتب النقاط والسبب',1);return}
+    ask('منح '+d+' نقطة لكل أعضاء '+team+'؟').then(function(y){if(!y)return;var n=0;S.users.forEach(function(u){if(u.team===team&&u.active!==false){addTx(u.id,d,r+' ('+team+')','','team');n++}});toast('تم منح النقاط لـ '+n+' مشارك')});
+  },
+  approve:function(d){var a=S.attempts.find(function(x){return x.id===d.id}),c=a&&S.challenges.find(function(x){return x.id===a.cid});if(!a||!c)return;a.status='approved';addTx(a.uid,c.points,'مهمة: '+c.title,'ch:'+c.id,'challenge');save();toast('تم القبول ✅');render()},
+  reject:function(d){var a=S.attempts.find(function(x){return x.id===d.id});if(a){a.status='rejected';save();toast('تم الرفض، يمكن للمشارك الإعادة');render()}},
+  addUser:function(){
+    var n=$('#nuName').value.trim();if(!n){toast('اكتب الاسم',1);return}
+    S.users.push({id:nextId(),name:n,team:$('#nuTeam').value,pass:$('#nuPass').value||'1234',active:true});save();toast('تمت الإضافة');$('#nuName').value='';uRows();
+  },
+  toggleUser:function(d){var u=userById(d.id);if(u){u.active=u.active===false;save();uRows()}},
+  delUser:function(d){ask('حذف المشارك وكل نقاطه؟').then(function(y){if(y){S.users=S.users.filter(function(u){return u.id!==d.id});S.tx=S.tx.filter(function(t){return t.uid!==d.id});S.attempts=S.attempts.filter(function(t){return t.uid!==d.id});save();uRows()}})},
+  importCsv:function(){
+    var rows=parseCSV($('#csvText').value);if(!rows.length){toast('الصق بيانات CSV أولاً',1);return}
+    if(/name|الاسم|اسم/i.test(rows[0][0]||''))rows.shift();
+    var add=0,skip=0;
+    rows.forEach(function(r){
+      var name=r[0];if(!name){skip++;return}
+      var team=r[1]||S.settings.teams[0];if(S.settings.teams.indexOf(team)<0)S.settings.teams.push(team);
+      var id=(r[2]||'').trim();if(!id)id=nextId();
+      if(userById(id)){skip++;return}
+      S.users.push({id:id,name:name,team:team,pass:r[3]||'1234',active:true});add++;
+    });
+    save();toast('تم استيراد '+add+' وتخطي '+skip);$('#csvText').value='';render();
+  },
+  exportUsers:function(){var m=totals();outText=toCSV([['username','name','team','password','points']].concat(S.users.map(function(u){return[u.id,u.name,u.team,u.pass,m[u.id]||0]})));render()},
+  exportTx:function(){outText=toCSV([['time','username','name','delta','reason','by']].concat(S.tx.map(function(t){var u=userById(t.uid);return[new Date(t.ts).toISOString(),t.uid,u?u.name:'',t.delta,t.reason,t.by]})));render()},
+  exportBoard:function(){outText=toCSV([['rank','name','team','title','points']].concat(ranking().map(function(x){return[x.rank,x.u.name,x.u.team,titleOf(x.p).name,x.p]})));render()},
+  addChallenge:function(){
+    var type=$('#ncType').value,t=$('#ncTitle').value.trim(),p=parseInt($('#ncPoints').value,10)||0,qs=[];
+    if(!t){toast('اكتب العنوان',1);return}
+    if(type!=='task'){qs=parseQs($('#ncQs').value);if(!qs.length){toast('الأسئلة غير مكتوبة بالصيغة الصحيحة',1);return}}
+    S.challenges.push({id:gid('c'),type:type,title:t,desc:$('#ncDesc').value.trim(),points:p,active:true,qs:qs});save();toast('تمت الإضافة ✅');render();
+  },
+  delChallenge:function(d){ask('حذف التحدي؟').then(function(y){if(y){S.challenges=S.challenges.filter(function(c){return c.id!==d.id});save();render()}})},
+  saveSettings:function(){
+    var teams=$('#sTeams').value.split('\n').map(function(x){return x.trim()}).filter(Boolean);
+    if(!teams.length||!$('#sAdmin').value||!$('#sSup').value){toast('أكمل البيانات',1);return}
+    S.settings={appName:$('#sName').value.trim()||'أبطال النمو',adminPass:$('#sAdmin').value,supPass:$('#sSup').value,teams:teams,videoPoints:parseInt($('#sVid').value,10)||0};save();toast('تم الحفظ ✅');render();
+  },
+  exportBackup:function(){outText=JSON.stringify(S);render()},
+  importBackup:function(){
+    try{var d=JSON.parse($('#bkText').value);if(!d.users||!d.settings)throw 0;ask('استبدال كل البيانات الحالية بالنسخة؟').then(function(y){if(y){S=d;save();toast('تمت الاستعادة ✅');render()}})}catch(e){toast('النسخة غير صالحة',1)}
+  },
+  resetAll:function(){ask('متأكد؟ هيتم مسح كل البيانات نهائياً.').then(function(y){if(y){S=seed();save();toast('تمت إعادة الضبط');render()}})},
+  copyOut:function(){var b=$('#outBox');b.select();try{navigator.clipboard.writeText(b.value).then(function(){toast('تم النسخ ✅')},function(){document.execCommand('copy');toast('تم النسخ ✅')})}catch(e){try{document.execCommand('copy');toast('تم النسخ ✅')}catch(x){toast('انسخ النص يدوياً',1)}}},
+  clearOut:function(){outText=null;render()}
+};
+function nextId(){var mx=0;S.users.forEach(function(u){var m=/^p(\d+)$/.exec(u.id);if(m)mx=Math.max(mx,parseInt(m[1],10))});return'p'+pad(mx+1)}
+
+/* ---------- events ---------- */
+document.addEventListener('click',function(e){var b=e.target.closest('[data-act]');if(b&&A[b.dataset.act]){e.preventDefault();A[b.dataset.act](b.dataset)}});
+document.addEventListener('change',function(e){
+  var t=e.target;
+  if(t.id==='roleSelect')toggleRole();
+  if(t.id==='lbTeam')lbRows();
+  if(t.dataset&&t.dataset.chg==='setTeam'){var u=userById(t.dataset.id);if(u){u.team=t.value;save();toast('تم تغيير الفريق')}}
+  if(t.id==='csvFile'&&t.files[0]){var fr=new FileReader();fr.onload=function(){$('#csvText').value=fr.result};fr.readAsText(t.files[0],'UTF-8')}
+});
+document.addEventListener('input',function(e){if(e.target.id==='lbSearch')lbRows();if(e.target.id==='uSearch')uRows()});
+document.addEventListener('keydown',function(e){if(e.key==='Enter'&&(e.target.id==='passInput'||e.target.id==='userInput'))login()});
+
+/* ---------- init ---------- */
+S=load();
+var th=lsGet(TKEY);if(th)document.documentElement.setAttribute('data-theme',th);
+try{var ss=JSON.parse(lsGet(SKEY)||'null');if(ss&&(ss.role==='admin'||ss.role==='supervisor'||(ss.role==='participant'&&userById(ss.uid))))session=ss}catch(e){}
+toggleRole();render();
+})();
+</script>
+</body>
+</html>
